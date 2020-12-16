@@ -1,1 +1,3 @@
 Test wspólnego git-a
+
+Teścik
