@@ -56,7 +56,29 @@ a:hover/*po najechaniu */
 {
   float:left;
   padding:10px;
-  width: 660px;
+  width: 550px;
+  margin-left: 0px;
+  text-align: left;
+}
+#photoMini
+{
+  float:left;
+  background-color: #3a3396;
+  margin-top: 10px;
+  padding:10px;
+  width: 400px;
+  height: 213px;
+  margin-left: 0px;
+  text-align: left;
+}
+#simpleInfo
+{
+  float:left;
+  background-color: #e41313;
+  margin-top: 10px;
+  padding:10px;
+  width: 400px;
+  height: 150px;
   margin-left: 0px;
   text-align: left;
 }
