@@ -1,0 +1,122 @@
+body
+{
+  background-color: grey;
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  color: white;
+}
+h1
+{
+  font-size: 48px;
+}
+h2
+{
+  font-size: 39px;
+}
+/*stylizacja hiperłączy */
+a:link/*nieodwiedzony link*/
+{
+  color:grey;
+}
+a:visited/*odwiedzony link*/
+{
+  color:black;
+}
+a:hover/*po najechaniu */
+{
+  color:#006600;
+}
+#container
+{
+  width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#logo
+{
+  background-color: #1f1f2e;
+  color: #b8b1d4;
+  text-align: center;
+  padding: 10px;
+  width:1000px;
+  letter-spacing: 3px;/*rozsunięcie liter*/
+}
+#menu
+{
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+  width: 1000px;
+  height: 39px;
+  padding: 10px;
+  opacity: 0.7;
+}
+#photoBig
+{
+  float:left;
+  padding:10px;
+  width: 660px;
+  margin-left: 0px;
+  text-align: left;
+}
+#nav
+{
+  float: left;
+  background-color: #9e9e9e;
+  width: 110px;
+  margin-right: 10px;
+  min-height: 590px;
+  padding: 25px;
+
+}
+#content
+{
+  float: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 1000px;
+  min-height: 350px;
+  color: grey;
+  background-color: white;
+  text-align: center;
+}
+#footer
+{
+  clear: both;
+  margin-top: 10px;
+  background-color: #232331;
+  color: #b8b1d4;
+  width: 1000px;
+  padding: 10px;
+  text-align: left;
+}
+#timer
+{
+  float:left;
+  font-family: 'DM Serif Display', serif;
+  font-size:35px;
+  width: 150px;
+  text-align: center;
+  margin-right: 10px;
+}
+.option
+{
+  float:left;
+  min-width: 50px;
+  height: 20px;
+  font-size: 19px;
+  padding: 10px;
+  margin-left: 20px;
+  border-right: 2px solid #9e9e9e; /*kreska obok (grubość styl lini kolor)*/
+  border-left: 2px solid #9e9e9e;
+  border-top: 2px solid #9e9e9e;
+  border-bottom: 2px solid #9e9e9e;
+  opacity:0.9; /*przeźroczystość*/
+}
+.option:hover /*co się dzieje jak najedziemy*/
+{
+  background-color: #1f1f2e;
+  color: #006600;
+  cursor: pointer;
+}
