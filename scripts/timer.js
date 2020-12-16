@@ -1,16 +1,16 @@
 function time() {
-    var dzisiaj = new Date();
+    var day = new Date();
 
-    var godzina = dzisiaj.getHours();
-    if (godzina < 10) godzina = "0" + godzina;
+    var hour = day.getHours();
+    if (hour < 10) hour = "0" + hour;
 
-    var minuta = dzisiaj.getMinutes();
-    if (minuta < 10) minuta = "0" + minuta;
+    var minute = day.getMinutes();
+    if (minute < 10) minute = "0" + minute;
 
-    var sekunda = dzisiaj.getSeconds();
-    if (sekunda < 10) sekunda = "0" + sekunda;
+    var second = day.getSeconds();
+    if (second < 10) second = "0" + second;
 
-    document.getElementById("timer").innerHTML = godzina + ":" + minuta + ":" + sekunda;
+    document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + second;
 
     setTimeout("time()", 1000);
 }
