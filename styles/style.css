@@ -143,3 +143,9 @@ a:hover/*po najechaniu */
   color: #006600;
   cursor: pointer;
 }
+.error
+{
+	color:red;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

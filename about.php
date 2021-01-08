@@ -22,20 +22,38 @@
 
         <div id="menu">
             <div id="timer"></div>
-            <a href="index.html">
+            <a href="index.php">
                 <div class="option">Home page</div>
             </a>
-            <a href="abaut.html">
+            <a href="about.php">
                 <div class="option">Abaut parking</div>
             </a>
-            <a href="statistics.html">
+            <a href="statistics.php">
                 <div class="option">Statistics</div>
             </a>
-            <a href="login.html">
-                <div class="option">Login</div>
-            </a>
+            
+            <?php
+                session_start();
+                    
+                if ((isset($_SESSION['islogin'])) && ($_SESSION['islogin']==true))
+                {
+                    echo 
+                    '<a href="myaccount.php">
+                        <div class="option">My account</div>
+                    </a>
+                    <a href="logout.php">
+                        <div class="option">Logout</div>
+                    </a>';
+                }
+                else{
+                    echo
+                    '<a href="login.php">
+                    <div class="option">Login</div>
+                    </a>';
+                }
+            ?>
             <div style="clear:both"></div>
-            <!--żeby wrócić do porządku w dół-->
+           
         </div>
 
         <div id="content">
@@ -51,7 +69,7 @@
             Author Olaf Kędziora<br />Contact <a href="mailto:olafked238@student.polsl.pl"
                 target="_blank">olafked238@student.polsl.pl</a>
             <br />
-            &copy; All rights reserved. 2020.
+            &copy; All rights reserved. 2021.
         </div>
     </div>
 </body>
