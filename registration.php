@@ -97,7 +97,7 @@
 				if($isemail>0)
 				{
 					$OK=false;
-					$_SESSION['e_Email']="Istnieje już konto przypisane do tego adresu e-mail!";
+					$_SESSION['e_Email']="This email already exist!";
 				}		
 
 				// Does the nickname already exist?
@@ -109,7 +109,7 @@
 				if($isnick>0)
 				{
 					$OK=false;
-					$_SESSION['e_Nick']="Istnieje już gracz o takim Nicku! Wybierz inny.";
+					$_SESSION['e_Nick']="This nickname already exist!";
                 }
                 
                 // Does the phone number already exist?
@@ -121,7 +121,7 @@
 				if($isphone>0)
 				{
 					$OK=false;
-					$_SESSION['e_Phone']="Istnieje już gracz o takim numerze telefonu! Wybierz inny.";
+					$_SESSION['e_Phone']="This phone number already exist!";
                 }
 				if ($OK==true)
 				{
