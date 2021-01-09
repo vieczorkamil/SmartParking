@@ -6,7 +6,12 @@
 	{
 		header('Location: index.php');
 		exit();
-	}
+    }
+    
+    if(isset($_POST['registration'])){
+        header('Location: registration.php');
+		exit();
+    }
 
 	require_once "connect.php";
 

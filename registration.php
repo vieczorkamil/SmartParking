@@ -210,125 +210,132 @@
         </div>
 
         <div id="content">
-        <form method="post">
-            
-            Nickname: <input type="text" value="<?php
-                if (isset($_SESSION['fr_Nick']))
-                {
-                    echo $_SESSION['fr_Nick'];
-                    unset($_SESSION['fr_Nick']);
-                }
-            ?>" name="Nick" /><br />
-            
-            <?php
-                if (isset($_SESSION['e_Nick']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Nick'].'</div>';
-                    unset($_SESSION['e_Nick']);
-                }
-            ?>
-            
-            Name: <input type="text" value="<?php
-                if (isset($_SESSION['fr_Name']))
-                {
-                    echo $_SESSION['fr_Name'];
-                    unset($_SESSION['fr_Name']);
-                }
-            ?>" name="Name" /><br />
-            
-            <?php
-                if (isset($_SESSION['e_Name']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Name'].'</div>';
-                    unset($_SESSION['e_Name']);
-                }
-            ?>
-            
-            Surname: <input type="text" value="<?php
-                if (isset($_SESSION['fr_Surname']))
-                {
-                    echo $_SESSION['fr_Surname'];
-                    unset($_SESSION['fr_Surname']);
-                }
-            ?>" name="Surname" /><br />
-            
-            <?php
-                if (isset($_SESSION['e_Surname']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Surname'].'</div>';
-                    unset($_SESSION['e_Surname']);
-                }
-            ?>
-            
-            E-mail: <input type="text" value="<?php
-                if (isset($_SESSION['fr_Email']))
-                {
-                    echo $_SESSION['fr_Email'];
-                    unset($_SESSION['fr_Email']);
-                }
-            ?>" name="Email" /><br />
-            
-            <?php
-                if (isset($_SESSION['e_Email']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Email'].'</div>';
-                    unset($_SESSION['e_Email']);
-                }
-            ?>
-            
-            Phone: <input type="text" value="<?php
-                if (isset($_SESSION['fr_Phone']))
-                {
-                    echo $_SESSION['fr_Phone'];
-                    unset($_SESSION['fr_Phone']);
-                }
-            ?>" name="Phone" /><br />
-            
-            <?php
-                if (isset($_SESSION['e_Phone']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Phone'].'</div>';
-                    unset($_SESSION['e_Phone']);
-                }
-            ?>
-            
-            Password: <input type="password"  value="" name="Password1" />
-            <br />
-            
-            <?php
-                if (isset($_SESSION['e_Password']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Password'].'</div>';
-                    unset($_SESSION['e_Password']);
-                }
-            ?>		
-            
-            Repet password: <input type="password" value="" name="Password2" />
-            <br />
-            
-            <label>
-                <input type="checkbox" name="Regulations" <?php
-                if (isset($_SESSION['fr_Regulations']))
-                {
-                    echo "checked";
-                    unset($_SESSION['fr_Regulations']);
-                }
-                    ?>/> Accept Regulations
-            </label>
-            
-            <?php
-                if (isset($_SESSION['e_Regulations']))
-                {
-                    echo '<div class="error">'.$_SESSION['e_Regulations'].'</div>';
-                    unset($_SESSION['e_Regulations']);
-                }
-            ?>	
-            
-            <br /><br />
-            
-            <input type="submit" name="Submit" value="Register now" />
-            
-        </form>
+        <div class="grid">
+                <div id="sign_in_up">
+                    <h2>Sign Up</h2>
+
+                    <form method="post">
+
+                        <fieldset>
+
+                            <p><label for="text">Nickname:</label></p>
+                            <p><input type="text" value="<?php
+                                if (isset($_SESSION['fr_Nick']))
+                                {
+                                    echo $_SESSION['fr_Nick'];
+                                    unset($_SESSION['fr_Nick']);
+                                } 
+                                ?>" name="Nick"></p>
+                                <?php
+                                if (isset($_SESSION['e_Nick']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Nick'].'</div>';
+                                    unset($_SESSION['e_Nick']);
+                                }
+                                ?>
+                            
+                            <p><label for="text">Name:</label></p>
+                            <p><input type="text" value="<?php
+                                if (isset($_SESSION['fr_Name']))
+                                {
+                                    echo $_SESSION['fr_Name'];
+                                    unset($_SESSION['fr_Name']);
+                                } 
+                                ?>" name="Name"></p>
+                                <?php
+                                if (isset($_SESSION['e_Name']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Name'].'</div>';
+                                    unset($_SESSION['e_Name']);
+                                }
+                                ?>
+                            
+                            <p><label for="text">Surname:</label></p>
+                            <p><input type="text" value="<?php
+                                if (isset($_SESSION['fr_Surname']))
+                                {
+                                    echo $_SESSION['fr_Surname'];
+                                    unset($_SESSION['fr_Surname']);
+                                } 
+                                ?>" name="Surname"></p>
+                                <?php
+                                if (isset($_SESSION['e_Surname']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Surname'].'</div>';
+                                    unset($_SESSION['e_Surname']);
+                                }
+                                ?>
+
+                            <p><label for="text">E-mail:</label></p>
+                            <p><input type="text" value="<?php
+                                if (isset($_SESSION['fr_Email']))
+                                {
+                                    echo $_SESSION['fr_Email'];
+                                    unset($_SESSION['fr_Email']);
+                                } 
+                                ?>" name="Email"></p>
+                                <?php
+                                if (isset($_SESSION['e_Email']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Email'].'</div>';
+                                    unset($_SESSION['e_Email']);
+                                }
+                                ?>
+
+                            <p><label for="text">Phone:</label></p>
+                            <p><input type="text" value="<?php
+                                if (isset($_SESSION['fr_Phone']))
+                                {
+                                    echo $_SESSION['fr_Phone'];
+                                    unset($_SESSION['fr_Phone']);
+                                } 
+                                ?>" name="Phone"></p>
+                                <?php
+                                if (isset($_SESSION['e_Phone']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Phone'].'</div>';
+                                    unset($_SESSION['e_Phone']);
+                                }
+                                ?>
+
+                            <p><label for="password">Password:</label></p>
+                            <p><input type="password" value="" name="Password1"></p>
+                                <?php
+                                if (isset($_SESSION['e_Password']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Password'].'</div>';
+                                    unset($_SESSION['e_Password']);
+                                }
+                                ?>
+                                
+                            <p><label for="password">Repet password:</label></p>
+                            <p><input type="password" value="" name="Password2"></p>
+                                
+                            <p><label>
+                                <input type="checkbox" name="Regulations" <?php
+                                if (isset($_SESSION['fr_Regulations']))
+                                {
+                                    echo "checked";
+                                    unset($_SESSION['fr_Regulations']);
+                                }
+                                    ?>/> Accept Regulations
+                            </label></p>
+                
+                            <?php
+                                if (isset($_SESSION['e_Regulations']))
+                                {
+                                    echo '<div class="error">'.$_SESSION['e_Regulations'].'</div>';
+                                    unset($_SESSION['e_Regulations']);
+                                }
+                            ?>
+                    
+                            <p><input type="submit" name="Submit" value="Register now"></p>
+
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div id="footer">

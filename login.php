@@ -67,25 +67,38 @@
         </div>
 
         <div id="content">
-            Login system.
-            <br />
-            <a href="registration.php">Create account</a>
-	        <br /><br />
-	
-            <form action="login_system.php" method="post">
-            
-                Login: <br /> <input type="text" name="login" /> <br />
-                Password: <br /> <input type="password" name="password" /> <br /><br />
-                <input type="submit" value="Submit" />
-            
-            </form>
-            
-        <?php
-            if(isset($_SESSION['Error']))	echo $_SESSION['Error'];
-        ?>
+            <div class="grid">
+                <div id="sign_in_up">
+                    <h2>Sign In</h2>
 
+                    <form action="login_system.php" method="post">
+
+                        <fieldset>
+
+                        <p><label for="text">Nickname:</label></p>
+                        <p><input type="text" id="email" name="login"></p>
+
+                        <p><label for="password">Password:</label></p>
+                        <p><input type="password" id="password" name="password"></p>
+
+                        <?php
+                            if(isset($_SESSION['Error']))
+                            {
+                                echo '<div class="error">'.$_SESSION['Error'].'</div>';
+                                unset($_SESSION['Error']);
+                            }
+                        ?>
+                    
+                            <p><input type="submit" value="Sign In"></p>
+                            <p><label for="text">Create account:</label></p>
+                            <p><input type="submit" value="Sign Up" name="registration"></p>
+
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
         </div>
-
 
         <div id="footer">
             Author Kamil Wieczorek<br />Contact <a href="mailto:kamiwie749@student.polsl.pl"
