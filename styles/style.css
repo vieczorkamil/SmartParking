@@ -44,7 +44,7 @@ a:hover/*po najechaniu */
   margin-top: 10px;
   width:1000px;
   height: 80px;
-  
+  border-radius: 20px 20px 0 0;
 }
 #logo h1
 {
@@ -123,6 +123,8 @@ a:hover/*po najechaniu */
 {
   clear: both;
   margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0 0 20px 20px;
   background-color: #232331;
   color: #fff;
   width: 1000px;

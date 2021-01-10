@@ -37,7 +37,7 @@
                 <div class="option">Home page</div>
             </a>
             <a href="about.php">
-                <div class="option">Abaut parking</div>
+                <div class="option">About parking</div>
             </a>
             <a href="statistics.php">
                 <div class="option">Statistics</div>
@@ -81,6 +81,7 @@
                         <p><label for="password">Password:</label></p>
                         <p><input type="password" id="password" name="password"></p>
 
+                        
                         <?php
                             if(isset($_SESSION['Error']))
                             {
@@ -88,11 +89,18 @@
                                 unset($_SESSION['Error']);
                             }
                         ?>
-                    
+                    <!--
                             <p><input type="submit" value="Sign In"></p>
                             <p><label for="text">Create account:</label></p>
                             <p><input type="submit" value="Sign Up" name="registration"></p>
-
+                    -->
+                            <p><label for="text">Login or create new account:</label></p>
+                            <table style="width:100%">
+                                <tr>
+                                    <td><p><input type="submit" value="Sign In"></p></td>
+                                    <td><p><input type="submit" value="Sign Up" name="registration"></p></td>
+                                </tr>
+                            </table>
                         </fieldset>
 
                     </form>

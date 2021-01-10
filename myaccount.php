@@ -36,7 +36,7 @@
                 <div class="option">Home page</div>
             </a>
             <a href="about.php">
-                <div class="option">Abaut parking</div>
+                <div class="option">About parking</div>
             </a>
             <a href="statistics.php">
                 <div class="option">Statistics</div>

@@ -26,7 +26,7 @@
                 <div class="option">Home page</div>
             </a>
             <a href="about.php">
-                <div class="option">Abaut parking</div>
+                <div class="option">About parking</div>
             </a>
             <a href="statistics.php">
                 <div class="option">Statistics</div>
@@ -57,7 +57,7 @@
         </div>
 
         <div id="content">
-            Info abaut parking and authors
+            Info About parking and authors
 
         </div>
 
