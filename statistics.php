@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts/timer.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
 
 </head>
 
@@ -55,12 +57,42 @@
             <div style="clear:both"></div>
 
         </div>
-
         <div id="content">
-            Statistics
+            <div id="parking-container">
+                <div class="block" style="background: <?php echo $_SESSION['spot1']; ?>"></div>
+                <div class="block" style="background: <?php echo $_SESSION['spot2']; ?>"></div>
+                <div class="block" style="background: <?php echo $_SESSION['spot3']; ?>"></div>
+                <div class="block" style="background: <?php echo $_SESSION['spot4']; ?>"></div>
+                <div class="block" style="background: <?php echo $_SESSION['spot5']; ?>"></div>
+            </div>
+            <div id="temperature">
+                <canvas id="temperature-plot" width="450" height="250"></canvas>
+            </div>
+            <div id="gas">
+                <canvas id="gas-plot" width="450" height="250"></canvas>
+            </div>
+            <!--<div class="temp" style="clear: both; float: left; position: relative; height:20vh; width:30vw">
+                 <canvas id="temperature-plot"></canvas>
+            </div>
+            <script src="scripts/temperature.js"></script>
+            <div class="gas" style="float: left; position: relative; height:20vh; width:30vw">
+                 <canvas id="gas-plot"></canvas>
+            </div>
+            <script src="scripts/temperature.js"></script>
+            <script src="scripts/gas.js"></script>-->
 
+            <!--<div style="width:240px; height:240px">
+                <canvas id="temperature-plot" width="300" height="150"></canvas>
+            
+            </div>
+           
+            <div style="width:240px; height:240px">
+                <canvas id="gas-plot" width="300" height="150"></canvas>
+                
+            </div> -->
+            <script src="scripts/plots.js"></script>
         </div>
-
+        
 
         <div id="footer">
             Author Kamil Wieczorek<br />Contact <a href="mailto:kamiwie749@student.polsl.pl"

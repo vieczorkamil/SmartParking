@@ -140,6 +140,49 @@ a:hover/*po najechaniu */
   text-align: center;
   margin-right: 10px;
 }
+#parking-container
+{
+  clear: both;
+  background-color: #232331;
+  width: 940px;
+  height: 160px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  opacity: 1;
+}
+#temperature
+{
+  float: left; 
+  position: relative;
+  background: #25252e;
+  margin-left:20px;
+  padding:10px;
+  min-height:225px; 
+  min-width:450px;
+}
+#gas
+{
+  float: left; 
+  background: #25252e;
+  position: relative;
+  padding:10px;
+  margin-left:20px;
+  margin-bottom:20px;
+  min-height:225px; 
+  min-width:450px;
+}
+.block
+{
+  float: left;
+  background: white;
+  margin-top: 30px;
+  margin-left: 56px;
+  width: 100px;
+  height: 80px;
+  padding: 10px;
+  
+}
 .option
 {
   float:left;

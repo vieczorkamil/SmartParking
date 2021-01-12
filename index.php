@@ -61,11 +61,16 @@
                 <img width="550" src="images/parkingBig.jpg" alt="Smart Parking" />
             </div>
             <div id="simpleInfo">
-                Free spots =
-                <br />
-                Temperature =
-                <br />
-                Fire hazard =
+                <?php
+                    echo "Free spots: ".$_SESSION['free_spots'];
+                    echo "<br />Temperature: ".$_SESSION['current_temp']."&#xb0;C";
+                    if($_SESSION['fire_hazard'] = 0){
+                        echo "<br />Fire alert!";
+                    }
+                    else{
+                        echo "<br />There is no fire hazard";
+                    }
+                ?>
             </div>
             <div id="photoMini">
                 <img width="420" height="233" src="images/parkingMini.jpg" alt="Smart Parking" />
