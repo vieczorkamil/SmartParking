@@ -308,7 +308,7 @@
                                 }
                                 ?>
                                 
-                            <p><label for="password">Repet password:</label></p>
+                            <p><label for="password">Repeat password:</label></p>
                             <p><input type="password" value="" name="Password2"></p>
                                 
                             <p><label>

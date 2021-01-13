@@ -1,3 +1,50 @@
+
+<?php
+
+//session_start();
+
+require_once "connect.php";
+
+try 
+    {
+        $connect = new mysqli($host, $db_user, $db_password, $db_name);
+        if ($connect->connect_errno!=0)
+        {
+            throw new Exception(mysqli_connect_errno());
+        }
+        else
+        {
+            $sqlQuery1 = "SELECT State FROM parking_spots";
+            $result = $connect->query($sqlQuery1);
+            
+            $i = 1;
+
+            while($row = $result->fetch_assoc()){
+                switch ($row['State']):
+                    case 'Free': $parking["spot$i"] = "green"; break;
+                    case 'Reserved': $parking["spot$i"] = "yellow"; break;
+                    case 'Occupied': $parking["spot$i"] = "red"; break;
+                    default: $parking["spot$i"] = "white"; break;
+                endswitch;
+                $i++;
+            }
+            
+            $result->close();
+
+            //echo $parking['spot1'];
+            //echo $parking['spot2'];
+
+            $connect->close(); 
+        }
+        
+    }
+    catch(Exception $e)
+    {
+        echo '<span style="color:red;">Server Error!</span>';
+        //echo '<br />Debugg: '.$e;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -59,11 +106,11 @@
         </div>
         <div id="content">
             <div id="parking-container">
-                <div class="block" style="background: <?php echo $_SESSION['spot1']; ?>"></div>
-                <div class="block" style="background: <?php echo $_SESSION['spot2']; ?>"></div>
-                <div class="block" style="background: <?php echo $_SESSION['spot3']; ?>"></div>
-                <div class="block" style="background: <?php echo $_SESSION['spot4']; ?>"></div>
-                <div class="block" style="background: <?php echo $_SESSION['spot5']; ?>"></div>
+                <div class="block" style="background: <?php echo $parking['spot1']; ?>"></div>
+                <div class="block" style="background: <?php echo $parking['spot2']; ?>"></div>
+                <div class="block" style="background: <?php echo $parking['spot3']; ?>"></div>
+                <div class="block" style="background: <?php echo $parking['spot4']; ?>"></div>
+                <div class="block" style="background: <?php echo $parking['spot5']; ?>"></div>
             </div>
             <div id="temperature">
                 <canvas id="temperature-plot" width="450" height="250"></canvas>

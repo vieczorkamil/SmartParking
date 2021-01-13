@@ -13,7 +13,7 @@
 			else
 			{
 				//getting sensor data
-				$sqlQuery1 = "SELECT Fire_Hazard ,Temperature, dt FROM parking GROUP BY dt DESC LIMIT 1";
+				$sqlQuery1 = "SELECT Fire_Hazard ,Temperature, time FROM parking GROUP BY time DESC LIMIT 1";
 				$sqlQuery2 = "SELECT COUNT(ID_spot) AS free_spots FROM parking_spots WHERE State = 'Free'";
                 $result1 = $connect->query($sqlQuery1);
                 
