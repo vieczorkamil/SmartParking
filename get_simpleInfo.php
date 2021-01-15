@@ -45,10 +45,10 @@
 
     echo "Free spots: ".$spots;
     echo "<br />Temperature: ".$temp."&#xb0;C";
-    if($fire = '1'){
+    if($fire =="1"){
         echo "<br />Fire alert!";
     }
-    else{
+    elseif($fire == "0"){
         echo "<br />There is no fire hazard";
     }
 ?>
