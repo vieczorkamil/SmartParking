@@ -15,9 +15,19 @@ function showGasGraph() {
                 var dateTime = [];
                 var gas = [];
 
-                for (var i = 0; i < dataGas.length; i++) {
-                    dateTime.push(dataGas[i].Reading_time);
-                    gas.push(dataGas[i].Gas_Level);
+                //Zrobiłem ograniczenie tylko do 30 ostatnich odczytów
+                if (dataGas.length <= 30) {
+
+                    for (var i = 0; i < dataGas.length; i++) {
+                        dateTime.push(dataGas[i].Reading_time);
+                        gas.push(dataGas[i].Gas_Level);
+                    }
+                }
+                else {
+                    for (var i = dataGas.length - 30; i < dataGas.length; i++) {
+                        dateTime.push(dataGas[i].Reading_time);
+                        gas.push(dataGas[i].Gas_Level);
+                    }
                 }
 
                 console.log(dateTime);
@@ -53,8 +63,8 @@ function showGasGraph() {
                             },
                             ticks: {
                                 min: 0,
-                                max: 200,
-                                stepSize: 40
+                                max: 20,
+                                stepSize: 4
                                 //beginAtZero: true
                             }
                         }]
@@ -97,9 +107,17 @@ function showTemperatureGraph() {
                 var dateTime = [];
                 var temperature = [];
 
-                for (var i = 0; i < data.length; i++) {
-                    dateTime.push(data[i].Reading_time);
-                    temperature.push(data[i].Temperature);
+                if (data.length <= 30) {
+                    for (var i = 0; i < data.length; i++) {
+                        dateTime.push(data[i].Reading_time);
+                        temperature.push(data[i].Temperature);
+                    }
+                }
+                else {
+                    for (var i = data.length - 30; i < data.length; i++) {
+                        dateTime.push(data[i].Reading_time);
+                        temperature.push(data[i].Temperature);
+                    }
                 }
 
                 console.log(dateTime);
@@ -135,7 +153,10 @@ function showTemperatureGraph() {
                                 labelString: "Temperature, \xB0C",
                             },
                             ticks: {
-                                beginAtZero: true
+                                //beginAtZero: true
+                                min: 18,
+                                max: 26,
+                                stepSize: 1
                             }
                         }]
                     }

@@ -6,20 +6,20 @@
     $api_key_value = "a5e4d1ab-6115-4e7f-b1f3-551b4ca4da85";
 
     //api_key=a5e4d1ab-6115-4e7f-b1f3-551b4ca4da85&ID_parking=1&Temperature=23.15&Gas_level=123&Fire_hazard&Spot1=1&Spot2=0&Spot3=1&Spot4=0&Spot5=1
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
         //$api_key = data_rep($_POST["api_key"]);
         $api_key = "a5e4d1ab-6115-4e7f-b1f3-551b4ca4da85";
         if($api_key == $api_key_value) {
             
-            $ID_parking = data_rep($_POST["ID_parking"]);
-            $Temperature = data_rep($_POST["Temperature"]);
-            $Gas_level = data_rep($_POST["Gas_level"]);
-            $Fire_hazard = data_rep($_POST["Fire_hazard"]);
-            $Spot1 = data_rep($_POST["Spot1"]);
-            $Spot2 = data_rep($_POST["Spot2"]);
-            $Spot3 = data_rep($_POST["Spot3"]);
-            $Spot4 = data_rep($_POST["Spot4"]);
-            $Spot5 = data_rep($_POST["Spot5"]);
+            $ID_parking = data_rep($_GET["ID_parking"]);
+            $Temperature = data_rep($_GET["Temperature"]);
+            $Gas_level = data_rep($_GET["Gas_level"]);
+            $Fire_hazard = data_rep($_GET["Fire_hazard"]);
+            $Spot1 = data_rep($_GET["Spot1"]);
+            $Spot2 = data_rep($_GET["Spot2"]);
+            $Spot3 = data_rep($_GET["Spot3"]);
+            $Spot4 = data_rep($_GET["Spot4"]);
+            $Spot5 = data_rep($_GET["Spot5"]);
             
 
             if($Spot1 == 1) $Spot1 = "Occupied"; else $Spot1 = "Free";
@@ -41,10 +41,9 @@
             {
 
                 //$sql = connect->query('UPDATE parking SET "ID_parking"='.$ID_parking.', "ID_post"='.$ID_post.', "Temperature"='.$Temperature.);
-                //$sql = $connect->query("INSERT INTO 'parking' ('ID_data', 'ID_parking', 'Temperature', 'Gas_level', 'Fire_hazard', 'Reading_time') VALUES (NULL, '$ID_parking', '$Temperature', '$Gas_level', '$Fire_hazard', current_timestamp())");
                 $sql = $connect->query("INSERT INTO parking VALUES (NULL, '$ID_parking', '$Temperature', '$Gas_level', '$Fire_hazard', current_timestamp())");
-
-
+                //$sql = $connect->query("INSERT INTO `parking` (`ID_data`, `ID_parking`, `Temperature`, `Gas_level`, `Fire_hazard`, `Reading_time`) VALUES (NULL, '$ID_parking', '$Temperature', '$Gas_level', '$Fire_hazard', current_timestamp())");
+                
                 $sql = $connect->query("UPDATE parking_spots SET State=CASE
                                         WHEN State='Reserved' THEN 'Reserved'
                                         ELSE '$Spot1' 
