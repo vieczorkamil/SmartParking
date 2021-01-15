@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 12 Sty 2021, 19:20
+-- Czas generowania: 15 Sty 2021, 16:54
 -- Wersja serwera: 10.4.17-MariaDB
 -- Wersja PHP: 8.0.0
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clients` (
   `ID_client` int(11) NOT NULL,
-  `ID_parking` int(11) NOT NULL,
-  `ID_spot` int(11) NOT NULL,
+  `ID_parking` int(11) DEFAULT NULL,
+  `ID_spot` int(11) DEFAULT NULL,
   `Name` varchar(64) COLLATE utf8_polish_ci NOT NULL,
   `Surname` varchar(64) COLLATE utf8_polish_ci NOT NULL,
   `Nick` varchar(64) COLLATE utf8_polish_ci NOT NULL,
@@ -38,6 +38,13 @@ CREATE TABLE `clients` (
   `Email` varchar(64) COLLATE utf8_polish_ci NOT NULL,
   `Phone` varchar(9) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `clients`
+--
+
+INSERT INTO `clients` (`ID_client`, `ID_parking`, `ID_spot`, `Name`, `Surname`, `Nick`, `Password`, `Email`, `Phone`) VALUES
+(1, NULL, NULL, 'Tomek', 'Jeden', 'Tomek1', '$2y$10$V86w.ENVB2QzQrddY5.pj.yPNc4pfMy9GZiTYsVL9yMAc.42qsPwq', 'tomek1@gmail.com', '123456789');
 
 -- --------------------------------------------------------
 
@@ -51,29 +58,54 @@ CREATE TABLE `parking` (
   `Temperature` varchar(5) COLLATE utf8_polish_ci NOT NULL,
   `Gas_level` varchar(3) COLLATE utf8_polish_ci NOT NULL,
   `Fire_hazard` tinyint(1) NOT NULL,
-  `Time` time NOT NULL DEFAULT current_timestamp(),
-  `Date` int(11) NOT NULL DEFAULT current_timestamp()
+  `Reading_time` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `parking`
 --
 
-INSERT INTO `parking` (`ID_data`, `ID_parking`, `Temperature`, `Gas_level`, `Fire_hazard`, `Time`, `Date`) VALUES
-(1, 1, '18.3', '180', 0, '12:00:00', 2147483647),
-(2, 1, '18.1', '180', 0, '12:05:00', 2147483647),
-(3, 1, '18.3', '180', 0, '12:10:00', 2147483647),
-(4, 1, '18.2', '180', 0, '12:15:00', 2147483647),
-(5, 1, '18.3', '180', 0, '12:20:00', 2147483647),
-(6, 1, '18.5', '180', 0, '12:25:00', 2147483647),
-(7, 1, '18.7', '180', 0, '12:30:00', 2147483647),
-(8, 1, '18.7', '180', 0, '12:35:00', 2147483647),
-(9, 1, '18.9', '180', 0, '12:40:00', 2147483647),
-(10, 1, '18.8', '180', 0, '12:45:00', 2147483647),
-(11, 1, '19.1', '180', 0, '12:50:00', 2147483647),
-(12, 1, '19.2', '180', 0, '12:55:00', 2147483647),
-(13, 1, '20.2', '180', 0, '13:00:00', 2147483647),
-(14, 1, '22.1', '180', 0, '13:05:00', 2147483647);
+INSERT INTO `parking` (`ID_data`, `ID_parking`, `Temperature`, `Gas_level`, `Fire_hazard`, `Reading_time`) VALUES
+(1, 1, '21.94', '0', 0, '16:28:56'),
+(2, 1, '22.00', '0', 0, '16:28:57'),
+(3, 1, '21.94', '0', 0, '16:28:58'),
+(4, 1, '21.94', '0', 0, '16:29:00'),
+(5, 1, '21.94', '0', 0, '16:29:01'),
+(6, 1, '22.00', '0', 0, '16:29:05'),
+(7, 1, '22.00', '0', 0, '16:29:05'),
+(8, 1, '21.94', '0', 0, '16:29:05'),
+(9, 1, '21.94', '0', 0, '16:29:06'),
+(10, 1, '22.00', '0', 0, '16:29:08'),
+(11, 1, '22.06', '0', 0, '16:29:09'),
+(12, 1, '22.00', '0', 0, '16:29:10'),
+(13, 1, '22.06', '0', 0, '16:29:12'),
+(14, 1, '22.06', '0', 0, '16:29:13'),
+(15, 1, '22.00', '0', 0, '16:29:14'),
+(16, 1, '22.06', '0', 0, '16:29:16'),
+(17, 1, '22.06', '0', 0, '16:29:17'),
+(18, 1, '22.00', '0', 0, '16:29:18'),
+(19, 1, '22.06', '0', 0, '16:29:19'),
+(20, 1, '22.06', '0', 0, '16:29:21'),
+(21, 1, '22.06', '0', 0, '16:29:22'),
+(22, 1, '22.06', '0', 0, '16:29:24'),
+(23, 1, '22.06', '0', 0, '16:29:25'),
+(24, 1, '22.00', '0', 0, '16:29:26'),
+(25, 1, '22.00', '0', 0, '16:34:33'),
+(26, 1, '22.00', '0', 0, '16:34:33'),
+(27, 1, '22.00', '0', 0, '16:34:33'),
+(28, 1, '22.00', '0', 0, '16:34:34'),
+(29, 1, '22.00', '0', 0, '16:34:36'),
+(30, 1, '22.00', '0', 0, '16:34:37'),
+(31, 1, '22.00', '0', 0, '16:34:38'),
+(32, 1, '22.00', '0', 0, '16:34:39'),
+(33, 1, '22.00', '0', 0, '16:34:41'),
+(34, 1, '21.94', '0', 0, '16:34:42'),
+(35, 1, '22.00', '0', 0, '16:34:43'),
+(36, 1, '22.00', '0', 0, '16:34:45'),
+(37, 1, '21.94', '0', 0, '16:34:46'),
+(38, 1, '22.00', '0', 0, '16:34:47'),
+(39, 1, '22.00', '0', 0, '16:34:48'),
+(40, 1, '21.94', '0', 0, '16:34:50'),
 
 -- --------------------------------------------------------
 
@@ -84,19 +116,20 @@ INSERT INTO `parking` (`ID_data`, `ID_parking`, `Temperature`, `Gas_level`, `Fir
 CREATE TABLE `parking_spots` (
   `ID_spot` int(11) NOT NULL,
   `ID_parking` int(11) NOT NULL,
-  `State` enum('Free','Reserved','Occupied','') COLLATE utf8_polish_ci NOT NULL
+  `State` enum('Free','Reserved','Occupied','') COLLATE utf8_polish_ci NOT NULL,
+  `Reading_time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `parking_spots`
 --
 
-INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `State`) VALUES
-(1, 1, 'Reserved'),
-(2, 1, 'Occupied'),
-(3, 1, 'Free'),
-(4, 1, 'Free'),
-(5, 1, 'Occupied');
+INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `State`, `Reading_time`) VALUES
+(1, 1, 'Occupied', '2021-01-15 15:35:16'),
+(2, 1, 'Reserved', '2021-01-15 15:35:16'),
+(3, 1, 'Occupied', '2021-01-15 15:35:16'),
+(4, 1, 'Occupied', '2021-01-15 15:35:16'),
+(5, 1, 'Occupied', '2021-01-15 15:35:16');
 
 -- --------------------------------------------------------
 
@@ -146,13 +179,13 @@ ALTER TABLE `rfid`
 -- AUTO_INCREMENT dla tabeli `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `ID_client` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `parking`
 --
 ALTER TABLE `parking`
-  MODIFY `ID_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=474;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
