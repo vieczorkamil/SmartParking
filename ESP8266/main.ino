@@ -102,8 +102,11 @@ void pushData()
         // Your Domain name with URL path or IP address with path
         http.begin(serverName);
 
+        // Specify content-type header
+        http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
         // HTTP POST request data
-        String httpRequestData = "api_key=" + apiKeyValue + "&ID_data=" + ID_data + "&ID_parking=" + id_parking + "&Temperature=" + temperatura + "&Gas_level=" + gas_level[0] + gas_level[1] + gas_level[2] + "&Fire_hazard=" + zagrozenie + "&Spot1=" + parkingData[1] + "&Spot2=" + parkingData[2] + "&Spot3=" + parkingData[3] + "&Spot4=" + parkingData[4] + "&Spot5=" + parkingData[5] + "";
+        String httpRequestData = "api_key=" + apiKeyValue + "&ID_data=" + String(ID_data) + "&ID_data=" + ID_data + "&ID_parking=" + id_parking + "&Temperature=" + temperatura + "&Gas_level=" + gas_level[0] + gas_level[1] + gas_level[2] + "&Fire_hazard=" + zagrozenie + "&Spot1=" + parkingData[1] + "&Spot2=" + parkingData[2] + "&Spot3=" + parkingData[3] + "&Spot4=" + parkingData[4] + "&Spot5=" + parkingData[5] + "";
         Serial.print("httpRequestData: ");
         Serial.println(httpRequestData);
 

@@ -105,7 +105,7 @@ INSERT INTO `parking` (`ID_data`, `ID_parking`, `Temperature`, `Gas_level`, `Fir
 (37, 1, '21.94', '0', 0, '16:34:46'),
 (38, 1, '22.00', '0', 0, '16:34:47'),
 (39, 1, '22.00', '0', 0, '16:34:48'),
-(40, 1, '21.94', '0', 0, '16:34:50'),
+(40, 1, '21.94', '0', 0, '16:34:50');
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT dla tabeli `parking`
 --
 ALTER TABLE `parking`
-  MODIFY `ID_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=474;
+  MODIFY `ID_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
