@@ -1,48 +1,3 @@
-<?php
-
-//session_start();
-require_once "connect.php";
-
-try 
-    {
-        $connect = new mysqli($host, $db_user, $db_password, $db_name);
-        if ($connect->connect_errno!=0)
-        {
-            throw new Exception(mysqli_connect_errno());
-        }
-        else
-        {
-            //getting sensor data
-            $sqlQuery1 = "SELECT Fire_Hazard ,Temperature, Reading_time FROM parking GROUP BY Reading_time DESC LIMIT 1";
-            $sqlQuery2 = "SELECT COUNT(ID_spot) AS free_spots FROM parking_spots WHERE State = 'Free'";
-            $result1 = $connect->query($sqlQuery1);
-            
-            $indexdata = $result1->fetch_assoc();
-
-            $temp = $indexdata['Temperature'];
-            $fire = $indexdata['Fire_Hazard'];
-            
-            $result1->close();
-            
-            $result2 = $connect->query($sqlQuery2);
-            $indexdata = $result2->fetch_assoc();
-            $spots= $indexdata['free_spots'];
-
-
-            //echo $_SESSION['free_spots'];
-           // echo $_SESSION['fire_hazard'];
-            //echo $_SESSION['current_temp'];
-            $result2->close();
-            $connect->close();
-        }
-        
-    }
-    catch(Exception $e)
-    {
-        echo '<span style="color:red;">Server Error!</span>';
-        //echo '<br />Debugg: '.$e;
-    }
-?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -54,6 +9,7 @@ try
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts/timer.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 </head>
 
@@ -106,17 +62,6 @@ try
                 <img width="550" src="images/parkingBig.jpg" alt="Smart Parking" />
             </div>
             <div id="simpleInfo">
-                <?php
-                    //echo '<div id="index-spots">Free spots: '.$spots.'</div>';
-                    echo "Free spots: ".$spots;
-                    echo "<br />Temperature: ".$temp."&#xb0;C";
-                    if($fire = 0){
-                        echo "<br />Fire alert!";
-                    }
-                    else{
-                        echo "<br />There is no fire hazard";
-                    }
-                ?>
             </div>
             <div id="photoMini">
                 <img width="420" height="233" src="images/parkingMini.jpg" alt="Smart Parking" />
@@ -135,6 +80,19 @@ try
             &copy; All rights reserved. 2021.
         </div>
     </div>
+    <script>
+        $(function() {
+            setInterval(function() {
+                $.ajax({
+                type: "GET",
+                url: "get_simpleInfo.php",
+                success: function(html) {
+                    $("#simpleInfo").html(html);
+                    }
+                });
+            }, 1000);//every 1000 ms
+        });
+    </script>
 </body>
 
 </html>

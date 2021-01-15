@@ -1,50 +1,3 @@
-
-<?php
-
-//session_start();
-
-require_once "connect.php";
-
-try 
-    {
-        $connect = new mysqli($host, $db_user, $db_password, $db_name);
-        if ($connect->connect_errno!=0)
-        {
-            throw new Exception(mysqli_connect_errno());
-        }
-        else
-        {
-            $sqlQuery1 = "SELECT State FROM parking_spots";
-            $result = $connect->query($sqlQuery1);
-            
-            $i = 1;
-
-            while($row = $result->fetch_assoc()){
-                switch ($row['State']):
-                    case 'Free': $parking["spot$i"] = "green"; break;
-                    case 'Reserved': $parking["spot$i"] = "yellow"; break;
-                    case 'Occupied': $parking["spot$i"] = "red"; break;
-                    default: $parking["spot$i"] = "white"; break;
-                endswitch;
-                $i++;
-            }
-            
-            $result->close();
-
-            //echo $parking['spot1'];
-            //echo $parking['spot2'];
-
-            $connect->close(); 
-        }
-        
-    }
-    catch(Exception $e)
-    {
-        echo '<span style="color:red;">Server Error!</span>';
-        //echo '<br />Debugg: '.$e;
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -58,6 +11,7 @@ try
     <script type="text/javascript" src="scripts/timer.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 </head>
 
@@ -106,11 +60,6 @@ try
         </div>
         <div id="content">
             <div id="parking-container">
-                <div class="block" style="background: <?php echo $parking['spot1']; ?>">1</div>
-                <div class="block" style="background: <?php echo $parking['spot2']; ?>">2</div>
-                <div class="block" style="background: <?php echo $parking['spot3']; ?>">3</div>
-                <div class="block" style="background: <?php echo $parking['spot4']; ?>">4</div>
-                <div class="block" style="background: <?php echo $parking['spot5']; ?>">5</div>
             </div>
             <div id="temperature">
                 <canvas id="temperature-plot" width="450" height="250"></canvas>
@@ -151,6 +100,19 @@ try
             &copy; All rights reserved. 2021.
         </div>
     </div>
+    <script>
+        $(function() {
+            setInterval(function() {
+                $.ajax({
+                type: "GET",
+                url: "get_parkingSpot.php",
+                success: function(html) {
+                    $("#parking-container").html(html);
+                    }
+                });
+            }, 1000);//every 1000 ms
+        });
+    </script>
 </body>
 
 </html>
