@@ -3,7 +3,7 @@ $(document).ready(function () {
     showGasGraph();
 });
 
-Chart.defaults.global.defaultFontColor =  '#d4d4d4';
+Chart.defaults.global.defaultFontColor = '#d4d4d4';
 
 function showGasGraph() {
     {
@@ -16,7 +16,7 @@ function showGasGraph() {
                 var gas = [];
 
                 for (var i = 0; i < dataGas.length; i++) {
-                    dateTime.push(dataGas[i].time);
+                    dateTime.push(dataGas[i].Reading_time);
                     gas.push(dataGas[i].Gas_Level);
                 }
 
@@ -49,7 +49,7 @@ function showGasGraph() {
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: "Gas"
+                                labelString: "Gas, ppm"
                             },
                             ticks: {
                                 min: 0,
@@ -98,8 +98,8 @@ function showTemperatureGraph() {
                 var temperature = [];
 
                 for (var i = 0; i < data.length; i++) {
-                    dateTime.push(data[i].time);
-                    temperature.push(data[i].temperature);
+                    dateTime.push(data[i].Reading_time);
+                    temperature.push(data[i].Temperature);
                 }
 
                 console.log(dateTime);

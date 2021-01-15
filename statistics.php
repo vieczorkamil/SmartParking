@@ -106,11 +106,11 @@ try
         </div>
         <div id="content">
             <div id="parking-container">
-                <div class="block" style="background: <?php echo $parking['spot1']; ?>"></div>
-                <div class="block" style="background: <?php echo $parking['spot2']; ?>"></div>
-                <div class="block" style="background: <?php echo $parking['spot3']; ?>"></div>
-                <div class="block" style="background: <?php echo $parking['spot4']; ?>"></div>
-                <div class="block" style="background: <?php echo $parking['spot5']; ?>"></div>
+                <div class="block" style="background: <?php echo $parking['spot1']; ?>">1</div>
+                <div class="block" style="background: <?php echo $parking['spot2']; ?>">2</div>
+                <div class="block" style="background: <?php echo $parking['spot3']; ?>">3</div>
+                <div class="block" style="background: <?php echo $parking['spot4']; ?>">4</div>
+                <div class="block" style="background: <?php echo $parking['spot5']; ?>">5</div>
             </div>
             <div id="temperature">
                 <canvas id="temperature-plot" width="450" height="250"></canvas>

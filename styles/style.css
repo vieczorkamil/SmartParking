@@ -97,6 +97,11 @@ a:hover/*po najechaniu */
   height: 150px;
   margin-left: 0px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  line-height: 1.6;
+  font-weight: bold;
 }
 #nav
 {
@@ -181,7 +186,14 @@ a:hover/*po najechaniu */
   width: 100px;
   height: 80px;
   padding: 10px;
-  
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  line-height: 1.6;
+  font-weight: bold;
+  font-size: 60px;
+  color: #25252e;
 }
 .option
 {
