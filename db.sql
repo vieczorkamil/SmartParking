@@ -129,7 +129,7 @@ CREATE TABLE `parking_spots` (
 --
 
 INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `ID_Client`, `State`, `Reading_time`, `Reservation_due`) VALUES
-(1, 1, 2, 'Reserved', '2021-01-01 00:00:00', '2021-01-18 16:43:32'),
+(1, 1, NULL, 'Free', '2021-01-01 00:00:00', '2021-01-18 16:43:32'),
 (2, 1, NULL, 'Free', '2021-01-01 00:00:00', '0000-00-00 00:00:00'),
 (3, 1, NULL, 'Free', '2021-01-01 00:00:00', '0000-00-00 00:00:00'),
 (4, 1, NULL, 'Free', '2021-01-01 00:00:00', '2021-01-16 14:26:52'),
