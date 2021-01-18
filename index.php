@@ -81,16 +81,16 @@
         </div>
     </div>
     <script>
-        $(function() {
-            setInterval(function() {
-                $.ajax({
+        $(function simpleUpdate() {
+            $.ajax({
                 type: "GET",
                 url: "get_simpleInfo.php",
                 success: function(html) {
                     $("#simpleInfo").html(html);
-                    }
+                }
+                }).then(function(){
+                    setTimeout(simpleUpdate, 1000);
                 });
-            }, 1000);//every 1000 ms
         });
     </script>
 </body>

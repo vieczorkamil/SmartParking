@@ -10,9 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts/timer.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 </head>
 
 <body onload="time();">
@@ -101,16 +100,25 @@
         </div>
     </div>
     <script>
-        $(function() {
-            setInterval(function() {
-                $.ajax({
+        $(function parkingSpotUpdate() {
+            $.ajax({
                 type: "GET",
                 url: "get_parkingSpot.php",
                 success: function(html) {
                     $("#parking-container").html(html);
                     }
+                }).then(function(){
+                    setTimeout(parkingSpotUpdate, 1000);
                 });
-            }, 1000);//every 1000 ms
+        });
+        $(function graphUpdate() {
+            $.ajax({
+                type: "GET",
+                url: "graphdata.php",
+                success: function(html) {}
+                }).then(function(){
+                    setTimeout(graphUpdate, 1000);
+                });
         });
     </script>
 </body>

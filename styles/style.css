@@ -17,6 +17,10 @@ h2
 {
   font-size: 39px;
 }
+h3
+{
+  font-size: 28px;
+}
 /*stylizacja hiperłączy */
 a:link/*nieodwiedzony link*/
 {
@@ -234,6 +238,48 @@ input
   padding: 0;
   transition: all .3s;
 }
+/* ---------- Account table ---------- */
+#accountInfo
+{
+  float: left;
+  display: table;
+  overflow: hidden; 
+  width: 480px;
+  min-height: 160px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  opacity: 1;
+}
+.account-tab{
+  float: left;
+  position: center;
+  border-collapse: collapse;
+  /*margin: 20px;*/
+  font-size: 0.9em;
+  min-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+}
+.account-tab thead tr
+{
+  background-color: #1f1f2e;
+  color: #ffffff;
+  text-align: center;
+}
+.account-tab th,
+.account-tab td
+{
+  padding: 12px 15px;
+}
+
+.account-tab tbody tr
+{
+  border-bottom: thin solid #dddddd;
+}
+.account-tab tbody tr:nth-of-type(even)
+{
+  background-color: #f3f3f3;
+}
 
 /* ---------- GRID ---------- */
 
@@ -301,3 +347,74 @@ input
 {
 	background: #28ad63;
 }
+
+/* ---------- Reservations ---------- */
+#reservations
+{
+  float: left;
+  width: 400px;
+  min-height: 160px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 0.9em;
+}
+#reservations h2
+{
+  background-color: #1f1f2e;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 15px;
+  font-size: 1em;
+}
+#reservations fieldset 
+{
+  background:  rgb(255, 255, 255);
+	border-radius: 0 0 20px 20px;
+  padding: 20px 26px;
+}
+
+#reservations fieldset p 
+{
+	color: #fff;
+  margin-bottom: 14px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+#reservations fieldset p:last-child 
+{
+	margin-bottom: 0;
+}
+#reservations fieldset input 
+{
+	border-radius: 3px;
+}
+#reservations fieldset input[type="radio"]
+{
+  margin-right: 5px;
+	margin-bottom: 7px;
+	
+}
+#reservations fieldset label
+{
+  
+	margin-bottom: 2px;
+	
+}
+#reservations fieldset input[type="submit"] 
+{
+	background: #33cc77;
+	color: #fff;
+  display: block;
+  margin: 10px auto;
+	padding: 4px 4px;
+  width: auto;
+  min-width: 90px;
+  float: center;
+}
+
+#reservations fieldset input[type="submit"]:hover 
+{
+	background: #28ad63;
+}
+
