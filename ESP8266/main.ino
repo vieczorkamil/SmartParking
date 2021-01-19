@@ -9,17 +9,18 @@ char rdata;
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-const char *ssid = "****************";                                          
-const char *password = "****************";                                            
+const char *ssid = "****************";
+const char *password = "****************";
 const char *serverName = "http://****************/SmartParking/post_data.php";
 
-String apiKeyValue = "a5e4d1ab-6115-4e7f-b1f3-551b4ca4da85";// API Key value to be compatible with the PHP code
+String apiKeyValue = "a5e4d1ab-6115-4e7f-b1f3-551b4ca4da85"; // API Key value to be compatible with the PHP code
 
 String temperatura;
 String zagrozenie;
 String gas_level[3];
 String parkingData[6];
 String id_parking = "1";
+int ID_data = 0;
 
 void setup()
 {
@@ -83,6 +84,10 @@ void loop()
             lcd.print(parkingData[4]);
             lcd.print(parkingData[5]);
 
+            ID_data++;
+            if (ID_data > 500)
+                ID_data = 1;
+
             pushData();
             myString = "";
         }
@@ -97,8 +102,11 @@ void pushData()
         // Your Domain name with URL path or IP address with path
         http.begin(serverName);
 
+        // Specify content-type header
+        http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
         // HTTP POST request data
-        String httpRequestData = "api_key=" + apiKeyValue + "&ID_parking=" + id_parking + "&Temperature=" + temperatura + "&Gas_level=" + gas_level[0] + gas_level[1] + gas_level[2] + "&Fire_hazard=" + zagrozenie + "&Spot1=" + parkingData[1] + "&Spot2=" + parkingData[2] + "&Spot3=" + parkingData[3] + "&Spot4=" + parkingData[4] + "&Spot5=" + parkingData[5] + "";
+        String httpRequestData = "api_key=" + apiKeyValue + "&ID_data=" + String(ID_data) + "&ID_data=" + ID_data + "&ID_parking=" + id_parking + "&Temperature=" + temperatura + "&Gas_level=" + gas_level[0] + gas_level[1] + gas_level[2] + "&Fire_hazard=" + zagrozenie + "&Spot1=" + parkingData[1] + "&Spot2=" + parkingData[2] + "&Spot3=" + parkingData[3] + "&Spot4=" + parkingData[4] + "&Spot5=" + parkingData[5] + "";
         Serial.print("httpRequestData: ");
         Serial.println(httpRequestData);
 
