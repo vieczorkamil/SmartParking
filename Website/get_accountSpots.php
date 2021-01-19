@@ -13,7 +13,7 @@
         {
             $sqlQuery1 = "SELECT * FROM clients WHERE ID_Client =".$_SESSION['ID_client'].";";
             $sqlQuery2 = "SELECT ID_Spot, Reservation_due FROM parking_spots WHERE ID_client =".$_SESSION['ID_client'].";";
-            $sqlQuery3 = "UPDATE parking_spots SET State='Free', Reservation_due=0, ID_Client=NULL WHERE ID_Client =".$_SESSION['ID_client'].";";
+            //$sqlQuery3 = "UPDATE parking_spots SET State='Free', Reservation_due=0, ID_Client=NULL WHERE ID_Client =".$_SESSION['ID_client'].";";
             
             $result = $connect->query($sqlQuery1);
             $row = $result->fetch_assoc();
@@ -23,7 +23,7 @@
             $nick = $row['Nick'];
             $email = $row['Email'];
             $phone = $row['Phone'];
-            $datetime = new DateTime();
+           // $datetime = new DateTime();
 
             $result->close();
 
@@ -37,10 +37,10 @@
             if(isset($row['Reservation_due'])){
                 $duetime = $row['Reservation_due'];
 
-                $endtime = DateTime::createFromFormat('Y-m-d H:i:s', $duetime);
+                //$endtime = DateTime::createFromFormat('Y-m-d H:i:s', $duetime);
 
-                if($datetime>$endtime)
-                    $connect->query($sqlQuery3);
+                //if($datetime>$endtime)
+                    //$connect->query($sqlQuery3);
                 
                 $_SESSION['Duetime'] = $duetime;
             }

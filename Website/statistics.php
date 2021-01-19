@@ -114,10 +114,17 @@
         $(function graphUpdate() {
             $.ajax({
                 type: "GET",
-                url: "graphdata.php",
-                success: function(html) {}
+                url: "graphdata.php"
                 }).then(function(){
                     setTimeout(graphUpdate, 1000);
+                });
+        });
+        $(function reservationUpdate() {
+            $.ajax({
+                type: "POST",
+                url: "reservation_timeout.php"
+                }).then(function(){
+                    setTimeout(reservationUpdate, 1000);
                 });
         });
     </script>
