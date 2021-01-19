@@ -57,7 +57,23 @@
         </div>
 
         <div id="content">
-            Info About parking and authors
+            <div id="aboutText">
+                <h2>Parking</h2>
+                <p>
+                    During this semesters second block there was a different project-based classes - 
+                “Systemy mikroprocesorowe” or Microprocessor-based Systems. This website is a very much
+                needed system that overlooks the parking lot model.  The primary goal was to make a web-based application connected to a 
+                database where the data from the sensors will be sent. The application  also supervises the 
+                registration of parking lot users. After the registration they are able to reserve a spot 
+                for themselves if it is available. Whether the user is logged in or not they can look up the state of the parking lot,
+                both as simply stated values and plots generated in real time.
+                </p>
+                <!--<img width="550" src="images/parkingBig.jpg" alt="Smart Parking" />-->
+            </div>
+            <div id="photoMini">
+                <img width="420" height="358" src="images/photoAbout2.jpg" alt="Smart Parking" />
+            </div>
+
 
         </div>
 
