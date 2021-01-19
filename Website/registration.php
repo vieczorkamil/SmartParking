@@ -49,7 +49,7 @@
 		if ((strlen($Password1)<8) || (strlen($Password1)>20))
 		{
 			$OK=false;
-			$_SESSION['e_Password']="Password must be 3 to 20 characters long!";
+			$_SESSION['e_Password']="Password must be 8 to 20 characters long!";
 		}
 		
 		if ($Password1!=$Password2)

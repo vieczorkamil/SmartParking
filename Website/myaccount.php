@@ -34,7 +34,7 @@ if(isset($_POST['Submit'])){
                 $spot_state = $result2->fetch_assoc();
                 switch ($spot_state['State']):
                     case 'Free': 
-                        $sqlQuery3 = "UPDATE parking_spots SET ID_Client =".$_SESSION['ID_client'].", State='Reserved', Reservation_due=now()+INTERVAL 15 MINUTE WHERE ID_Spot= '$spot'";
+                        $sqlQuery3 = "UPDATE parking_spots SET ID_Client =".$_SESSION['ID_client'].", State='Reserved', Reservation_due=now()+INTERVAL 3 MINUTE WHERE ID_Spot= '$spot'";
                         $result3 = $connect->query($sqlQuery3);
                         $_SESSION['info_Free']="The chosen spot has been reserved for you!";
                         break;

@@ -33,7 +33,7 @@
 	
 ?>
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 
 <head>
@@ -91,8 +91,16 @@
         </div>
 
         <div id="content">
-            Hello NEW user!!!
-
+            <div class="grid">
+            <div id="sign_in_up">
+                <h2>Welcome</h2>
+                <fieldset>
+                    <p><label for="text">Your account was created successfully!</label></p>
+                    <br/>
+                    <a href="login.php" ><td><p><input type="submit" value="Sign In"></p></td></a>
+                </fieldset>
+            </div>
+            </div>
         </div>
 
 
