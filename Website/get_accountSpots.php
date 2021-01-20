@@ -62,7 +62,7 @@
                 
     <table class="account-tab" border="1" cellpadding="10" cellspacing="0">
             <tr>
-                <thead><th colspan='2'>Dane użytkownika</th></thead>
+                <thead><th colspan='2'>Account information</th></thead>
             </tr>
             <tr>
                 <td> Name: </td>
