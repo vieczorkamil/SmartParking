@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts/timer.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
@@ -114,10 +113,16 @@
         $(function graphUpdate() {
             $.ajax({
                 type: "GET",
-                url: "graphdata.php",
-                success: function(html) {}
+                url: "graphdata.php"
                 }).then(function(){
                     setTimeout(graphUpdate, 1000);
+                });
+        });
+        $(function reservationUpdate() {
+            $.ajax({
+                url: "reservation_timeout.php"
+                }).then(function(){
+                    setTimeout(reservationUpdate, 1000);
                 });
         });
     </script>

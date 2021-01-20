@@ -92,6 +92,13 @@
                     setTimeout(simpleUpdate, 1000);
                 });
         });
+        $(function reservationUpdate() {
+            $.ajax({
+                url: "reservation_timeout.php"
+                }).then(function(){
+                    setTimeout(reservationUpdate, 1000);
+                });
+        });
     </script>
 </body>
 
