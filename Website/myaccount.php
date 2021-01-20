@@ -228,7 +228,6 @@ if(isset($_POST['Submit'])){
         });
         $(function reservationUpdate() {
             $.ajax({
-                type: "POST",
                 url: "reservation_timeout.php"
                 }).then(function(){
                     setTimeout(reservationUpdate, 1000);
