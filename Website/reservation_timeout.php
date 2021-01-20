@@ -11,7 +11,7 @@
         }
         else
         {
-            $sqlQuery1 = "SELECT ID_Spot, Reservation_due FROM parking_spots";
+            $sqlQuery1 = 'SELECT ID_Spot, Reservation_due FROM parking_spots WHERE State= "Reserved"';
             //$sqlQuery2 = "UPDATE parking_spots SET State='Free', Reservation_due=0, ID_Client=NULL WHERE ID_Client =".$_SESSION['ID_client'].";";
             
 
