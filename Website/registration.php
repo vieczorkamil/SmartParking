@@ -21,9 +21,21 @@
 			$OK=false;
 			$_SESSION['e_Nick']="Nickname can only consist of letters and numbers";
         }
-        
+
         $Name = $_POST['Name'];
+        if (strlen($Name)==0)
+		{
+			$OK=false;
+			$_SESSION['e_Name']="Please enter your name!";
+        }
+
         $Surname = $_POST['Surname'];
+        if (strlen($Surname)==0)
+		{
+			$OK=false;
+			$_SESSION['e_Surname']="Please enter your surname!";
+        }
+        
 		
 		// Checking e-mail
 		$Email = $_POST['Email'];

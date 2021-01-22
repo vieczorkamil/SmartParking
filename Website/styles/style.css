@@ -113,7 +113,8 @@ a:hover/*po najechaniu */
   padding:10px;
   width: 550px;
   margin-left: 0px;
-  text-align: left;
+  /*text-align: left;*/
+  text-align: justify;
 }
 #aboutText p
 {
@@ -331,7 +332,7 @@ input
 #sign_in_up h2 
 {
 	background: #232331;
-	border-radius: 20px 20px 0 0;
+	/*border-radius: 20px 20px 0 0;*/
 	color: #fff;
 	font-size: 28px;
 	padding: 20px 26px;
@@ -339,7 +340,7 @@ input
 #sign_in_up fieldset 
 {
   background:  #777;
-	border-radius: 0 0 20px 20px;
+	/*border-radius: 0 0 20px 20px;*/
   padding: 20px 26px;
   margin-top: 10px;
 }

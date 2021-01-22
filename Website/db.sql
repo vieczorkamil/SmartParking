@@ -571,19 +571,20 @@ CREATE TABLE `parking_spots` (
   `ID_spot` int(11) NOT NULL,
   `ID_parking` int(11) NOT NULL,
   `State` enum('Free','Reserved','Occupied','') COLLATE utf8_polish_ci NOT NULL,
-  `Reading_time` timestamp NOT NULL DEFAULT current_timestamp()
+  `Reading_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Reservation_due` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `parking_spots`
 --
 
-INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `State`, `Reading_time`) VALUES
-(1, 1, 'Free', '2021-01-01 00:00:00'),
-(2, 1, 'Free', '2021-01-01 00:00:00'),
-(3, 1, 'Free', '2021-01-01 00:00:00'),
-(4, 1, 'Free', '2021-01-01 00:00:00'),
-(5, 1, 'Free', '2021-01-01 00:00:00');
+INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `State`, `Reading_time`, `Reservation_due`) VALUES
+(1, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(2, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(3, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(4, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(5, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
