@@ -570,6 +570,7 @@ INSERT INTO `parking` (`ID_data`, `ID_parking`, `Temperature`, `Gas_level`, `Fir
 CREATE TABLE `parking_spots` (
   `ID_spot` int(11) NOT NULL,
   `ID_parking` int(11) NOT NULL,
+  `ID_client` int(11) DEFAULT NULL,
   `State` enum('Free','Reserved','Occupied','') COLLATE utf8_polish_ci NOT NULL,
   `Reading_time` timestamp NOT NULL DEFAULT current_timestamp(),
   `Reservation_due` datetime NOT NULL DEFAULT current_timestamp()
@@ -579,12 +580,12 @@ CREATE TABLE `parking_spots` (
 -- Zrzut danych tabeli `parking_spots`
 --
 
-INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `State`, `Reading_time`, `Reservation_due`) VALUES
-(1, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
-(2, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
-(3, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
-(4, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
-(5, 1, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00');
+INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `ID_client`, `State`, `Reading_time`, `Reservation_due`) VALUES
+(1, 1, NULL, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(2, 1, NULL, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(3, 1, NULL, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(4, 1, NULL, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00'),
+(5, 1, NULL, 'Free', '2021-01-01 00:00:00','0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -595,7 +596,7 @@ INSERT INTO `parking_spots` (`ID_spot`, `ID_parking`, `State`, `Reading_time`, `
 CREATE TABLE `rfid` (
   `ID_card` int(11) NOT NULL,
   `Tag` int(11) NOT NULL,
-  `ID_Client` int(11) NOT NULL
+  `ID_client` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
@@ -634,7 +635,7 @@ ALTER TABLE `rfid`
 -- AUTO_INCREMENT dla tabeli `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `ID_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT dla tabeli `parking`
